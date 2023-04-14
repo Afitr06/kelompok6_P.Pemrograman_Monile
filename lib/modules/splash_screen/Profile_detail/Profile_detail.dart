@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan_v/models/user.dart';
 
 class profileDetail extends StatefulWidget {
-  const profileDetail({super.key});
+  const profileDetail({
+    super.key,
+    required this.user,
+  });
+  final User user;
 
   @override
   State<profileDetail> createState() => _profileDetailState();
