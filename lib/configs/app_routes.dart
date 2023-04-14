@@ -10,6 +10,7 @@ class AppRoutes {
   static const String splash = "splash";
   static const String home = "home";
   static const String newsDetail = "news-detail";
+  static const String profileDetail = "profile-detail";
 
   static Page _splahScreenBuilder(BuildContext context, GoRouterState state) {
     return const MaterialPage(
@@ -24,12 +25,12 @@ class AppRoutes {
     } else {
       user = User(
         id: 002,
-        name: "Permata",
-        username: "permata",
-        email: "permata@email.com",
+        name: "Kelompok6",
+        username: "Enam",
+        email: "Enam@email.com",
         profilePhoto:
             "https://i.pinimg.com/originals/06/87/a8/0687a8ac12eee878f87ddfa8f0cc66d8.jpg",
-        phoneNumber: "085111123456",
+        phoneNumber: "",
       );
     }
     return const MaterialPage(
