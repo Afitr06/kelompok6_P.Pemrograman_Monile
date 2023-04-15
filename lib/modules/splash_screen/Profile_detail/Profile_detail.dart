@@ -16,10 +16,25 @@ class _profileDetailState extends State<profileDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          "profile Detail screen",
-        ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).padding.top,
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Row(
+              children: [
+                Text("profil detail"),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
