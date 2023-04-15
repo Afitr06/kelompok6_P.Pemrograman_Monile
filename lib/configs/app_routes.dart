@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pertemuan_v/models/user.dart';
 import 'package:pertemuan_v/modules/home_screen/home_screen.dart';
 import 'package:pertemuan_v/modules/news_detail_screen/news_detail_screen.dart';
+import 'package:pertemuan_v/modules/profile_detail/profile_detail.dart';
 import 'package:pertemuan_v/modules/splash_screen/splash_screen.dart';
 
+import '../models/news.dart';
 import '../models/user.dart';
 
 class AppRoutes {
@@ -18,21 +21,23 @@ class AppRoutes {
     );
   }
 
+   static Page _profileScreenBuilder(BuildContext context, GoRouterState state) {
+      late User user;
+      if (state.extra != null && state.extra is User){
+          user = state.extra as User;
+      }  else {
+        user = User.dummy(); 
+      }
+    
+    return MaterialPage(
+      child: ProfileDetail(
+        user: user
+      ),
+    );
+  }
+
+
   static Page _homeScreenBuilder(BuildContext context, GoRouterState state) {
-    late User user;
-    if (state.extra != null && state.extra is User) {
-      user = state.extra! as User;
-    } else {
-      user = User(
-        id: 002,
-        name: "Kelompok6",
-        username: "Enam",
-        email: "Enam@email.com",
-        profilePhoto:
-            "https://i.pinimg.com/originals/06/87/a8/0687a8ac12eee878f87ddfa8f0cc66d8.jpg",
-        phoneNumber: "",
-      );
-    }
     return const MaterialPage(
       child: HomeScreen(),
     );
@@ -45,6 +50,7 @@ class AppRoutes {
     return MaterialPage(
       child: NewsDetailScreen(
         id: state.params["id"]!,
+        news: state.extra as News,
       ),
     );
   }
@@ -65,6 +71,11 @@ class AppRoutes {
             name: newsDetail,
             path: "news-detail:id",
             pageBuilder: _newsDetailScreenBuilder,
+          ),
+          GoRoute(
+            name: profileDetail,
+            path: "profile-detail",
+            pageBuilder: _profileScreenBuilder,
           ),
         ],
       ),

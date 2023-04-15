@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pertemuan_v/models/news.dart';
 import 'package:pertemuan_v/models/user.dart';
 import 'package:pertemuan_v/modules/home_screen/fragments/home_fragment/home_fragment_widgets.dart';
 
@@ -70,11 +71,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,
                     ),
-                    child: HomeFragmentWidget.hotestNewsCard(
-                      size,
-                      "https://picsum.photos/1080/690",
-                      "Lebaran Sebentar Lagi",
-                    ),
+                    child: HomeFragmentWidget.hotestNewsCard(size, newsList[0]),
                   ),
                   const SizedBox(
                     height: 16,
