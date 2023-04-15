@@ -245,7 +245,7 @@ class LatestNewsCard extends StatelessWidget {
                       child: Image.network(news.banner, fit: BoxFit.cover,
                           errorBuilder: (BuildContext context, Object exception,
                               StackTrace? stackTrace) {
-                        return const Text('not image');
+                        return const Text('');
                       }),
                     ),
                   ),
@@ -269,7 +269,7 @@ class LatestNewsCard extends StatelessWidget {
                           height: 20,
                         ),
                         Text(
-                          "by ${news.author} - ${news.date}",
+                          "bye ${news.author} - ${news.date}",
                           style: const TextStyle(
                             fontSize: 10,
                           ),
