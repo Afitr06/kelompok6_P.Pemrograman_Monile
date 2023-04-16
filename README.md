@@ -1,4 +1,9 @@
-# pertemuan_v
+# pertemuan_v 
+Kelompok 6
+1.Raudhatul fadilah (2006176)
+2.Muhamad Fitroh Sodikin (2006164)
+3.Deni saputra (2006177)
+4.Muhammad Ilyasa (2006175)
 
 Base Code Pertemuan Lima Sesuai Video
 
