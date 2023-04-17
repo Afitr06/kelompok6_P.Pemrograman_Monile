@@ -9,6 +9,8 @@ import 'package:pertemuan_v/modules/splash_screen/splash_screen.dart';
 import '../models/news.dart';
 import '../models/user.dart';
 
+// ilyass
+
 class AppRoutes {
   static const String splash = "splash";
   static const String home = "home";
@@ -21,21 +23,18 @@ class AppRoutes {
     );
   }
 
-   static Page _profileScreenBuilder(BuildContext context, GoRouterState state) {
-      late User user;
-      if (state.extra != null && state.extra is User){
-          user = state.extra as User;
-      }  else {
-        user = User.dummy(); 
-      }
-    
+  static Page _profileScreenBuilder(BuildContext context, GoRouterState state) {
+    late User user;
+    if (state.extra != null && state.extra is User) {
+      user = state.extra as User;
+    } else {
+      user = User.dummy();
+    }
+
     return MaterialPage(
-      child: ProfileDetail(
-        user: user
-      ),
+      child: ProfileDetail(user: user),
     );
   }
-
 
   static Page _homeScreenBuilder(BuildContext context, GoRouterState state) {
     return const MaterialPage(
